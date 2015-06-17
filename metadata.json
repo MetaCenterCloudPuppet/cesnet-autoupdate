@@ -1,0 +1,76 @@
+{
+  "name": "cesnet-autoupdate",
+  "version": "0.1.0",
+  "author": "cesnet",
+  "summary": "Enable autoupdates",
+  "license": "MIT",
+  "source": "https://github.com/MetaCenterCloudPuppet/cesnet-autoupdate",
+  "project_page": "https://github.com/MetaCenterCloudPuppet/cesnet-autoupdate",
+  "issues_url": "https://github.com/MetaCenterCloudPuppet/cesnet-autoupdate/issues",
+  "tags": [
+    "apt",
+    "yum",
+    "update",
+    "unattended"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Fedora",
+      "operatingsystemrelease": [
+        "19",
+        "20",
+        "21",
+        "22"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "14.04"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 1.0.0"
+    },
+    {
+      "name": "aco/yum_autoupdate",
+      "version_requirement": ">= 0.6.1 <= 1.0.0"
+    }
+  ]
+}
+

@@ -1,0 +1,6 @@
+fixtures:
+  repositories:
+    stdlib: "git://github.com/puppetlabs/puppetlabs-stdlib"
+    yum_autoupdate: "git://github.com/antoineco/aco-yum_autoupdate"
+  symlinks:
+    autoupdate: "#{source_dir}"
