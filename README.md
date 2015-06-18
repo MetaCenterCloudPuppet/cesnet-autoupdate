@@ -79,7 +79,7 @@ Updates at random time 7:00 - 7:20 each day and send email notification, if some
 Email to sent notifications. Default is undef.
 
 ####`randomwait`
-Random time to wait before update in seconds. Default is 3600.
+Random time to wait before update in seconds. Default is to leave it to the autoupdate tools (1 hour for cron-apt and yum-autoupdate).
 
 ####`type`
 Update type. Default is 'default'.

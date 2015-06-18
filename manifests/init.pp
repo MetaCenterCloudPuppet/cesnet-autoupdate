@@ -8,7 +8,7 @@
 # Email to sent notifications. Default is undef.
 #
 # ####`randomwait`
-# Random time to wait before update in seconds. Default is 3600.
+# Random time to wait before update in seconds. Default is to leave it to the autoupdate tools (1 hour for cron-apt and yum-autoupdate).
 #
 # ####`type`
 # Update type. Default is 'default'.
@@ -26,7 +26,7 @@
 #
 class autoupdate(
   $email = undef,
-  $randomwait = 3600,
+  $randomwait = undef,
   $type = 'default',
 
   $hour = 5,
@@ -53,6 +53,14 @@ class autoupdate(
         undef   => false,
         default => true,
       }
+      case $randomwait {
+        undef: {
+          $randomwait_min = undef
+        }
+        default: {
+          $randomwait_min = $randomwait / 60
+        }
+      }
       class{'yum_autoupdate':
         default_schedule => false,
       }
@@ -60,7 +68,7 @@ class autoupdate(
         email_to     => $email,
         notify_email => $notify,
         update_cmd   => $type,
-        randomwait   => $randomwait / 60,
+        randomwait   => $randomwait_min,
         hour         => $hour,
         minute       => $minute,
         month        => $month,
