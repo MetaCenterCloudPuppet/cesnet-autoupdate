@@ -81,7 +81,7 @@ Email to sent notifications. Default is undef.
 ####`randomwait`
 Random time to wait before update in seconds. Default is to leave it to the autoupdate tools (1 hour for cron-apt and yum-autoupdate).
 
-####`type`
+####`update`
 Update type. Default is 'default'.
 
 * *cron-apt*: **default**, **dist**

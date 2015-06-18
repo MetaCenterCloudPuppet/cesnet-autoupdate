@@ -10,7 +10,7 @@
 # ####`randomwait`
 # Random time to wait before update in seconds. Default is to leave it to the autoupdate tools (1 hour for cron-apt and yum-autoupdate).
 #
-# ####`type`
+# ####`update`
 # Update type. Default is 'default'.
 #
 # * *cron-apt*: **default**, **dist**
@@ -27,7 +27,7 @@
 class autoupdate(
   $email = undef,
   $randomwait = undef,
-  $type = 'default',
+  $update = 'default',
 
   $hour = 5,
   $minute = absent,
@@ -38,11 +38,11 @@ class autoupdate(
 ) inherits ::autoupdate::params {
   include stdlib
 
-  validate_string($type)
+  validate_string($update)
 
   case $::osfamily {
     'Debian': {
-      $action = $type ? {
+      $action = $update ? {
         /dist(-upgrade)?/ => 'dist-upgrade',
         default           => 'upgrade',
       }
@@ -67,7 +67,7 @@ class autoupdate(
       yum_autoupdate::schedule { 'autoupdate':
         email_to     => $email,
         notify_email => $notify,
-        update_cmd   => $type,
+        update_cmd   => $update,
         randomwait   => $randomwait_min,
         hour         => $hour,
         minute       => $minute,
