@@ -16,6 +16,8 @@
 # * *cron-apt*: **default**, **dist**
 # * *yum\_autoupdate*: **default**, **security**, **minimal**, ...
 #
+# Unknown types translates to **default**.
+#
 # ####`hour`
 # ####`minute`
 # ####`month`
@@ -49,6 +51,11 @@ class autoupdate(
       include autoupdate::cron_apt
     }
     'RedHat': {
+      $action = $update ? {
+        /dist(-upgrade)?/ => 'default',
+        /upgrade/         => 'default',
+        default           => $update,
+      }
       $notify = $email ? {
         undef   => false,
         default => true,
@@ -68,7 +75,7 @@ class autoupdate(
         email_from   => "root@${::fqdn}",
         email_to     => $email,
         notify_email => $notify,
-        update_cmd   => $update,
+        update_cmd   => $action,
         randomwait   => $randomwait_min,
         hour         => $hour,
         minute       => $minute,

@@ -87,6 +87,8 @@ Update type. Default is 'default'.
 * *cron-apt*: **default**, **dist**
 * *yum\_autoupdate*: **default**, **security**, **minimal**, ...
 
+Unknown types translates to **default**.
+
 ####`hour`
 ####`minute`
 ####`month`
