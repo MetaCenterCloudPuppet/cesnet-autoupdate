@@ -65,6 +65,7 @@ class autoupdate(
         default_schedule => false,
       }
       yum_autoupdate::schedule { 'autoupdate':
+        email_from   => "root@${::fqdn}",
         email_to     => $email,
         notify_email => $notify,
         update_cmd   => $update,
