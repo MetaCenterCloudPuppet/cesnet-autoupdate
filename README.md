@@ -69,7 +69,7 @@ Updates at random time 5:00 - 6:00 each day.
       randomwait => 1200,
     }
 
-Updates at random time 7:00 - 7:20 each day and send email notification, if someting were updated.
+Update at random time 7:00 - 7:20 each day and send email notification, if someting was updated.
 
 <a name="reference"/>
 ## Reference
