@@ -24,7 +24,7 @@
 # ####`monthday`
 # ####`weekday`
 # ####`special`
-# Parameters for cron job.
+# Parameters for cron job. Beware the defaults are **\***!
 #
 class autoupdate(
   $email = undef,

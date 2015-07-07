@@ -12,15 +12,16 @@
     * [Beginning with autoupdate](#beginning-with-autoupdate)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+    * [Parameters](#parameters)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
 
-<a name="#overview"/>
+<a name="overview"/>
 ## Overview
 
 This module sets up automatic updates in the system. It is easy to use module with one scheduled job and email support.
 
-<a name="#module-description"/>
+<a name="module-description"/>
 ## Module Description
 
 This module offers unified simplified way to handle automatic updates in Debian-like and RedHat-like systems.
@@ -29,10 +30,10 @@ On Debian **cron-apt** tool is used.
 
 On RedHat **yum-autoupdate** tool is used (using *aco-yum\_autoupdate* puppet module).
 
-<a name="#setup"/>
+<a name="setup"/>
 ## Setup
 
-<a name="#what-autoupdate-affects"/>
+<a name="what-autoupdate-affects"/>
 ### What autoupdate affects
 
 #### Debian
@@ -47,7 +48,7 @@ On RedHat **yum-autoupdate** tool is used (using *aco-yum\_autoupdate* puppet mo
 
 See [https://github.com/antoineco/aco-yum_autoupdate#setup](https://github.com/antoineco/aco-yum_autoupdate#setup).
 
-<a name="#beginning-with-autoupdate"/>
+<a name="beginning-with-autoupdate"/>
 ### Beginning with autoupdate
 
 *Example*: default parameters without email notification
@@ -56,7 +57,7 @@ See [https://github.com/antoineco/aco-yum_autoupdate#setup](https://github.com/a
 
 Updates at random time 5:00 - 6:00 each day.
 
-<a name="#usage"/>
+<a name="usage"/>
 ## Usage
 
 *Example*: some parameters and email
@@ -64,15 +65,16 @@ Updates at random time 5:00 - 6:00 each day.
     class { 'autoupdate':
       email      => 'email@example.com',
       hour       => 7,
+      minute     => 0,
       randomwait => 1200,
     }
 
 Updates at random time 7:00 - 7:20 each day and send email notification, if someting were updated.
 
-<a name="#reference"/>
+<a name="reference"/>
 ## Reference
 
-<a name="#parameters"/>
+<a name="parameters"/>
 ### Parameters
 
 ####`email`
@@ -95,14 +97,14 @@ Unknown types translates to **default**.
 ####`monthday`
 ####`weekday`
 ####`special`
-Parameters for cron job.
+Parameters for cron job. Beware the defaults are **\***!
 
-<a name="#limitations"/>
+<a name="limitations"/>
 ## Limitations
 
 RedHat-like and Debian-like systems are supported.
 
-<a name="#development"/>
+<a name="development"/>
 ## Development
 
 * repository: [https://github.com/MetaCenterCloudPuppet/cesnet-autoupdate](https://github.com/MetaCenterCloudPuppet/cesnet-autoupdate)
