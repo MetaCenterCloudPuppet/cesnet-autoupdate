@@ -1,7 +1,7 @@
 {
   "name": "cesnet-autoupdate",
-  "version": "1.0.1",
-  "author": "cesnet",
+  "version": "1.0.2",
+  "author": "Frantisek Dvorak <valtri@civ.zcu.cz>",
   "summary": "Enable autoupdates",
   "license": "MIT",
   "source": "https://github.com/MetaCenterCloudPuppet/cesnet-autoupdate",
