@@ -14,3 +14,5 @@ SimpleCov.start do
     SimpleCov::Formatter::Console
   ])
 end
+
+$test_os = on_supported_os.select { |k, _o| k !~ /^fedora.*/ }
