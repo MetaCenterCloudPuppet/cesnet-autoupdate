@@ -5,6 +5,7 @@
 class autoupdate::cron_apt {
   $action = $autoupdate::action
   $email = $autoupdate::email
+  $randomwait = $autoupdate::randomwait
 
   ensure_packages($::autoupdate::packages)
 
