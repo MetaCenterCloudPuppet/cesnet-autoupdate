@@ -39,6 +39,6 @@ class autoupdate::cron_apt {
     month    => $autoupdate::month,
     monthday => $autoupdate::monthday,
     weekday  => $autoupdate::weekday,
-    special  => $autoupdate::special
+    special  => $autoupdate::special,
   }
 }
