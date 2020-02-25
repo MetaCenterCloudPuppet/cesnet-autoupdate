@@ -1,6 +1,6 @@
 {
   "name": "cesnet-autoupdate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Frantisek Dvorak <valtri@civ.zcu.cz>",
   "summary": "Enable autoupdates",
   "license": "MIT",
@@ -27,7 +27,10 @@
       "operatingsystemrelease": [
         "6",
         "7",
-        "8"
+        "8",
+        "9",
+        "10",
+        "11"
       ]
     },
     {
@@ -52,7 +55,9 @@
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "14.04"
+        "14.04",
+        "16.04",
+        "18.04"
       ]
     }
   ],
